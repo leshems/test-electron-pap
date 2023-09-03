@@ -20,8 +20,7 @@ jobs:
                   security create-keychain -p actions build.keychain
                   security default-keychain -s build.keychain
                   security unlock-keychain -p actions build.keychain
-                  security import certificate.p12 -k build.keychain -P "${{ secrets.MACOS_CERTIFICATE_P12_PASSWORD }}" -T 
-/usr/bin/codesign
+                  security import certificate.p12 -k build.keychain -P "${{ secrets.MACOS_CERTIFICATE_P12_PASSWORD }}" -T /usr/bin/codesign
                   security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k actions build.keychain
             - name: Package and Notarize
               run: npm run make
@@ -32,19 +31,3 @@ jobs:
                   APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
                   APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
                   APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
-    # build-windows:
-    #     runs-on: windows-latest
-    #     steps:
-    #         - uses: actions/checkout@v2
-    #         - name: Install Node.js
-    #           uses: actions/setup-node@v2
-    #           with:
-    #               node-version: "20.3.0"
-    #         - name: Install dependencies
-    #           run: npm ci
-    #         - name: Package and Publish to S3
-    #           run: npm run dist:dev
-    #           env:
-    #               AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    #               AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
