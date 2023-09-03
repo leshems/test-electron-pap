@@ -18,12 +18,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@electron-forge/cli": "^v6.0.0-beta.70",
-    "@electron-forge/maker-deb": "^v6.0.0-beta.70",
-    "@electron-forge/maker-rpm": "^v6.0.0-beta.70",
-    "@electron-forge/maker-squirrel": "^v6.0.0-beta.70",
-    "@electron-forge/maker-zip": "^v6.0.0-beta.70",
-    "@electron-forge/plugin-auto-unpack-natives": "^v6.0.0-beta.70",
+    "@electron-forge/cli": "v6.0.0-beta.70",
+    "@electron-forge/maker-deb": "v6.0.0-beta.70",
+    "@electron-forge/maker-rpm": "v6.0.0-beta.70",
+    "@electron-forge/maker-squirrel": "v6.0.0-beta.70",
+    "@electron-forge/maker-zip": "v6.0.0-beta.70",
+    "@electron-forge/plugin-auto-unpack-natives": "v6.0.0-beta.70",
     "@electron-forge/plugin-vite": "^v6.0.0-beta.70",
     "electron": "26.1.0"
   },
